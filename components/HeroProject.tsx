@@ -3,11 +3,14 @@ interface HeroProjectProps {}
 const HeroProject = ({}: HeroProjectProps) => {
   return (
     <section className="max-w-container mx-auto mt-8">
-      <h2 className="text-xl">Project</h2>
-      <div id="project__container" className="pt-8 flex flex-wrap gap-[30px]">
+      <h2 className="text-xl px-2 xl:px-0">Project</h2>
+      <div
+        id="project__container"
+        className="pt-8 flex flex-col lg:flex-row gap-[30px] items-start px-2 xl:px-0"
+      >
         <div
           id="nft__picture"
-          className="flex-1 aspect-square max-w-[649px] min-w-[300px] bg-dark2 border-[20px] border-dark1 rounded-lg grid place-items-center"
+          className="flex-1 aspect-square max-w-[649px] min-w-[80%] lg:min-w-max mx-auto bg-dark2 border-[20px] border-dark1 rounded-lg grid place-items-center"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +34,7 @@ const HeroProject = ({}: HeroProjectProps) => {
             />
           </svg>
         </div>
-        <div id="nft__content" className="max-w-[455px]">
+        <div id="nft__content" className="max-w-[455px] mx-auto">
           <h2 className="text-5xl font-semibold pb-[12px]">
             Great NFT Project
           </h2>
@@ -43,7 +46,7 @@ const HeroProject = ({}: HeroProjectProps) => {
                 <span>Eric Clapton</span>
               </div>
             </div>
-            <button className="bg-action rounded-lg text-sm font-bold px-10">
+            <button className="bg-action rounded-lg text-sm font-bold px-10 hover:bg-opacity-80">
               Mint
             </button>
           </div>
