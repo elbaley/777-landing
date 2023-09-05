@@ -1,3 +1,5 @@
+import ActionButton from "./ActionButton";
+
 interface HeroProjectProps {}
 
 const HeroProject = ({}: HeroProjectProps) => {
@@ -46,9 +48,7 @@ const HeroProject = ({}: HeroProjectProps) => {
                 <span>Eric Clapton</span>
               </div>
             </div>
-            <button className="bg-action rounded-lg text-sm font-bold px-10 hover:bg-opacity-80">
-              Mint
-            </button>
+            <ActionButton>Mint</ActionButton>
           </div>
           <p id="nft__description" className="break-words py-4">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
