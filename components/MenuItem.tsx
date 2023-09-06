@@ -1,11 +1,15 @@
 import { cva, VariantProps } from "class-variance-authority";
+import Link from "next/link";
 interface MenuItemProps {
+  forModal?: boolean;
+  withTag?: boolean;
   label: string;
   icon?: "none" | "home" | "collective" | "analytics" | "feed";
+  status?: "active" | "inactive";
+  path: string;
 }
 const menuItemVariants = cva(
   [
-    "hidden",
     "md:block",
     "text-sm",
     "font-medium",
@@ -18,6 +22,7 @@ const menuItemVariants = cva(
     "before:mr-1",
     "before:bg-contain",
     "before:bg-no-repeat",
+    "hover:opacity-80",
   ],
   {
     variants: {
@@ -32,16 +37,51 @@ const menuItemVariants = cva(
         active: ["border-b-2 border-borderGreen mb-[-2px]"],
         inactive: ["border-none"],
       },
+      intent: {
+        navbar: ["hidden"],
+        menu: ["block"],
+      },
+      tag: {
+        none: [""],
+        soon: [
+          "after:content-['SOON']",
+          "after:text-[8px]",
+          "after:absolute",
+          "after:top-[-2px]",
+          "after:text-success",
+        ],
+      },
     },
     defaultVariants: {
       icon: "none",
       status: "inactive",
+      tag: "soon",
     },
   },
 );
 
-const MenuItem = ({ label, icon }: MenuItemProps) => {
-  return <div className={menuItemVariants({ icon: icon as any })}>{label}</div>;
+const MenuItem = ({
+  forModal,
+  withTag,
+  label,
+  icon,
+  path,
+  status = "inactive",
+}: MenuItemProps) => {
+  return (
+    <Link href={path}>
+      <div
+        className={menuItemVariants({
+          icon: icon as any,
+          status: status,
+          intent: forModal ? "menu" : "navbar",
+          tag: withTag ? "soon" : "none",
+        })}
+      >
+        {label}
+      </div>
+    </Link>
+  );
 };
 
 export default MenuItem;

@@ -1,4 +1,5 @@
 import HeroProject from "@/components/HeroProject";
+import MoreProjects from "@/components/MoreProjects";
 import OtherProjects from "@/components/OtherProjects";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <main className="">
       <HeroProject />
       <OtherProjects />
+      <MoreProjects />
     </main>
   );
 }
