@@ -7,7 +7,6 @@ const Footer = ({}: FooterProps) => {
     <footer className="bg-dark1 px-2 xl:px-0">
       <div className="flex flex-wrap items-start justify-between gap-7 max-w-container mx-auto py-12">
         {/* Logo and Info */}
-        {/* TODO instead of pr-28 make spacing with gap */}
         <div className="flex flex-col gap-5 ">
           <img className="w-[120px] h-[40px]" src="/footer_logo.png" />
           <span>777 Sense Labs © 2022</span>

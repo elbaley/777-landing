@@ -47,7 +47,6 @@ const Navbar = ({}: NavbarProps) => {
         path="/feed"
         status={pathname === "/feed" ? "active" : "inactive"}
       />
-      {/* TODO implement hamburger menu */}
       <button onClick={openModal} className="md:hidden absolute left-3">
         <GiHamburgerMenu className="text-xl" />
       </button>
